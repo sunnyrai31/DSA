@@ -1,4 +1,5 @@
-/**
+/** Stack - > first come/in last serve/out (FILO).
+ * *******Basic Operation ********
  * push -> to the top
  * pop -> remove from the top
  * isempty - check whether its empty or not
@@ -16,7 +17,7 @@ export class Stack {
     this.item.pop();
   }
   isEmpty() {
-    return this.item.length === 0 ? true : false;
+    return this.item.length === 0;
   }
   peek() {
     return this.item[this.item.length - 1];
