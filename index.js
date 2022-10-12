@@ -4,6 +4,7 @@ import { Stack } from './DS/Custom/stack.js';
 import { Queue } from './DS/Custom/queue.js';
 import { QueueViaObj } from './DS/Custom/queueObjectWay.js';
 import { CircularQueue } from './DS/Custom/circularQueue.js';
+import { CircularQueue2 } from './DS/Custom/circularQueuePart2.js';
 
 console.log('******stack via array way O(n)******');
 const stack = new Stack();
@@ -64,3 +65,30 @@ circularQueue.print();
 console.log('first/peek item', circularQueue.peek());
 console.log('last item', circularQueue.last());
 console.log('size item', circularQueue.size());
+
+console.log('****** circular queue 2 ******');
+
+const circularQueue2 = new CircularQueue2(5);
+for (let i = 0; i < 5; i++) {
+  circularQueue2.enqueue(i);
+}
+circularQueue2.print();
+circularQueue2.dequeue();
+circularQueue2.dequeue();
+circularQueue2.dequeue();
+circularQueue2.print();
+circularQueue2.enqueue(11);
+circularQueue2.print();
+console.log('first/peek item', circularQueue2.peek());
+console.log('last item', circularQueue2.last());
+console.log('size item', circularQueue2.size());
+
+circularQueue2.enqueue(12);
+circularQueue2.enqueue(13);
+circularQueue2.enqueue(14); // circualr point finding
+circularQueue2.print();
+
+console.log('first/peek item', circularQueue2.peek());
+console.log('last item', circularQueue2.last());
+console.log('size item', circularQueue2.size());
+console.log('circular queue is full or not ', circularQueue2.isFull());
