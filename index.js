@@ -73,22 +73,14 @@ for (let i = 0; i < 5; i++) {
   circularQueue2.enqueue(i);
 }
 circularQueue2.print();
+console.log(circularQueue2.dequeue());
+console.log(circularQueue2.dequeue());
+console.log(circularQueue2.peek());
 circularQueue2.dequeue();
 circularQueue2.dequeue();
 circularQueue2.dequeue();
-circularQueue2.print();
-circularQueue2.enqueue(11);
-circularQueue2.print();
-console.log('first/peek item', circularQueue2.peek());
-console.log('last item', circularQueue2.last());
-console.log('size item', circularQueue2.size());
+console.log(circularQueue2.peek());
 
-circularQueue2.enqueue(12);
-circularQueue2.enqueue(13);
-circularQueue2.enqueue(14); // circualr point finding
 circularQueue2.print();
-
-console.log('first/peek item', circularQueue2.peek());
-console.log('last item', circularQueue2.last());
-console.log('size item', circularQueue2.size());
-console.log('circular queue is full or not ', circularQueue2.isFull());
+console.log(circularQueue2.peek());
+console.log(circularQueue2.isEmpty());
