@@ -3,6 +3,7 @@ import './style.css';
 import { Stack } from './DS/Custom/stack.js';
 import { Queue } from './DS/Custom/queue.js';
 import { QueueViaObj } from './DS/Custom/queueObjectWay.js';
+import { CircularQueue } from './DS/Custom/circularQueue.js';
 
 console.log('******stack via array way O(n)******');
 const stack = new Stack();
@@ -37,3 +38,20 @@ queueViaObj.dequeue();
 queueViaObj.print();
 
 console.log(queueViaObj.peek());
+
+console.log('****** circular queue ******');
+
+const circularQueue = new CircularQueue(10);
+for (let i = 0; i < 10; i++) {
+  circularQueue.enqueue(i);
+}
+circularQueue.print();
+circularQueue.dequeue();
+circularQueue.dequeue();
+circularQueue.dequeue();
+circularQueue.print();
+circularQueue.enqueue(11);
+circularQueue.print();
+console.log('first/peek item', circularQueue.peek());
+console.log('last item', circularQueue.last());
+console.log('size item', circularQueue.size());
