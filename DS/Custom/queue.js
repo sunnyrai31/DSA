@@ -16,6 +16,11 @@
  * cpu processor usage
  * callback queue in js
  */
+
+/**
+ * Note: because this Queue class is implemented via Array it has time complexcity O(n) in dequeue operation
+ *
+ */
 export class Queue {
   constructor() {
     this.item = [];
@@ -39,5 +44,12 @@ export class Queue {
     if (this.item.length > 0) {
       return this.item[0];
     }
+    return 'Peek Search : Queue is empty';
+  }
+  lastItem() {
+    if (this.item.length > 0) {
+      return this.item[this.item.length - 1];
+    }
+    return 'LastItem Search :Queue is empty';
   }
 }

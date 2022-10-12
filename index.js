@@ -13,7 +13,13 @@ console.log(stack.peek());
 console.log(stack.isEmpty());
 
 const queue = new Queue();
-for (let i = 0; i < 10; i++){ 
+for (let i = 0; i < 1; i++) {
   queue.enqueue(i);
 }
-console.log(queue);
+queue.print();
+
+queue.dequeue();
+queue.print();
+
+console.log(queue.peek());
+console.log(queue.lastItem());
