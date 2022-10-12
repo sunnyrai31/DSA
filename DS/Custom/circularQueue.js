@@ -6,8 +6,7 @@ export class CircularQueue {
     this.arrSize = size;
   }
   enqueue(item) {
-    // if (this.rear <= this.items.length && this.rear < this.arrSize)
-    if (this.rear <= this.arrSize) {
+    if (this.rear < this.arrSize) {
       this.items[this.rear] = item;
       this.rear++;
     } else {
@@ -25,7 +24,9 @@ export class CircularQueue {
     console.log(this.items.toString());
   }
   size() {
-    return this.rear - this.front;
+    return this.rear == 0
+      ? this.items.length - this.front
+      : this.rear - this.front;
   }
   isEmpty() {
     return this.items.length - (this.rear - this.front);
@@ -34,6 +35,6 @@ export class CircularQueue {
     return this.items[this.front];
   }
   last() {
-    return this.items[this.rear - 1];
+    return this.items[this.rear > 0 ? this.rear - 1 : this.rear];
   }
 }

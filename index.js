@@ -55,3 +55,12 @@ circularQueue.print();
 console.log('first/peek item', circularQueue.peek());
 console.log('last item', circularQueue.last());
 console.log('size item', circularQueue.size());
+
+circularQueue.enqueue(12);
+circularQueue.enqueue(13);
+circularQueue.enqueue(14); // circualr point finding
+circularQueue.print();
+
+console.log('first/peek item', circularQueue.peek());
+console.log('last item', circularQueue.last());
+console.log('size item', circularQueue.size());
