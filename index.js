@@ -5,6 +5,7 @@ import { Queue } from './DS/Custom/queue.js';
 import { QueueViaObj } from './DS/Custom/queueObjectWay.js';
 import { CircularQueue } from './DS/Custom/circularQueue.js';
 import { CircularQueue2 } from './DS/Custom/circularQueuePart2.js';
+import { rotationOfArray } from './DS/Native/array/rotationOfArray.js';
 
 console.log('******stack via array way O(n)******');
 const stack = new Stack();
@@ -29,7 +30,7 @@ queue.print();
 console.log(queue.peek());
 console.log(queue.lastItem());
 
-console.log('******queue via objecct way O(1)******');
+console.log('******queue via object way O(1)******');
 const queueViaObj = new QueueViaObj();
 for (let i = 0; i < 10; i++) {
   queueViaObj.enqueue(i);
@@ -84,3 +85,7 @@ console.log(circularQueue2.peek());
 circularQueue2.print();
 console.log(circularQueue2.peek());
 console.log(circularQueue2.isEmpty());
+
+console.log('************rotation of array **************');
+const rotatedArr = rotationOfArray([1, 2, 3, 4, 5, 6], 6, 3);
+console.log(rotatedArr);
