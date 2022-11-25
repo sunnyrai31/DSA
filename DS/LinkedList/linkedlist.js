@@ -52,14 +52,21 @@ class LinkedList {
       this.size++;
     }
   }
+  /**
+   *
+   * @param {position} position
+   * @returns deleteItem
+   */
   delete(position) {
     let prev = this.head;
+    let deleteItem;
     if (position < 0 || position >= this.size) {
       console.log("Invalid position");
       return -1;
     }
     if (position === 0) {
       this.head = this.head.next;
+      deleteItem = prev.data;
       prev = null;
     } else {
       for (let index = 0; index < position - 1; index++) {
@@ -69,8 +76,10 @@ class LinkedList {
       let deleteAble = prev.next;
       const nextNode = deleteAble.next;
       prev.next = nextNode;
+      deleteItem = deleteAble.data;
       deleteAble = null;
     }
+    return deleteItem;
     this.size--;
   }
 
@@ -111,6 +120,6 @@ console.log("size", list.size);
 // current linked list : 4 12 0 71 1 5 6 2 3
 // list.delete(0); //12 0 71 1 5 6 2 3
 // list.delete(1); //12 71 1 5 6 2 3
-list.delete(0); //12 71 1 5 6 2
+console.log("deleted item", list.delete(0)); //12 71 1 5 6 2
 list.printList();
 console.log("size", list.size);
