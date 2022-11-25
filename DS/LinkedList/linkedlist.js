@@ -33,7 +33,6 @@ class LinkedList {
 
   insertAt(data, position) {
     const node = new Node(data);
-    let prevNode;
     if (position < 0 || position > this.size) {
       console.log("Invalid position");
       return -1;
@@ -47,10 +46,32 @@ class LinkedList {
       for (let index = 0; index < position - 1; index++) {
         prev = prev.next;
       }
+      console.log(prev);
       node.next = prev.next;
       prev.next = node;
       this.size++;
     }
+  }
+  delete(position) {
+    let prev = this.head;
+    if (position < 0 || position >= this.size) {
+      console.log("Invalid position");
+      return -1;
+    }
+    if (position === 0) {
+      this.head = this.head.next;
+      prev = null;
+    } else {
+      for (let index = 0; index < position - 1; index++) {
+        prev = prev.next;
+      }
+      // console.log(prev);
+      let deleteAble = prev.next;
+      const nextNode = deleteAble.next;
+      prev.next = nextNode;
+      deleteAble = null;
+    }
+    this.size--;
   }
 
   /**
@@ -79,10 +100,17 @@ list.insert(5);
 list.insert(6);
 list.insert(2);
 list.insert(3);
-list.insertAt(0, 1);
 list.insertAt(71, 2);
 list.insertAt(12, 1);
-list.insertAt(100, 100);
+list.insertAt(100, 8);
 
+list.printList();
+console.log("size", list.size);
+
+/*delete calls */
+// current linked list : 4 12 0 71 1 5 6 2 3
+// list.delete(0); //12 0 71 1 5 6 2 3
+// list.delete(1); //12 71 1 5 6 2 3
+list.delete(0); //12 71 1 5 6 2
 list.printList();
 console.log("size", list.size);
