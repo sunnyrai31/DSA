@@ -26,7 +26,6 @@ class LinkedList {
       while (current.next) {
         current = current.next;
       }
-      // console.log(current);
       current.next = node;
       this.size++;
     }
