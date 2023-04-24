@@ -31,8 +31,6 @@ Function.prototype.mybind = function (refObject, ...arg) {
 
 const printAddressInfo = function (...arg) {
   const space = " ";
-  console.log(arg);
-
   this.info =
     "Hi" +
     space +
