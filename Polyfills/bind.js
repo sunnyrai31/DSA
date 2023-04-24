@@ -34,7 +34,7 @@ Function.prototype.mybind = function (refObject, ...arg) {
 const printAddressInfo = function (...arg) {
   const space = " ";
   console.log(arg);
-  // const argument = arg.split(',').join(' ');
+
   this.info =
     "Hi" +
     space +
@@ -52,4 +52,4 @@ const addressinfo = {
   city: "bangalore",
 };
 const printAddressRef1 = printAddressInfo.mybind(addressinfo);
-printAddressRef1("Sunny Rai", 31, "this is another test");
+printAddressRef1("Sunny Rai", 31, "this is code test");
