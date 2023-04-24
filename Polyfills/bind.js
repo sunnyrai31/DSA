@@ -22,8 +22,6 @@ const printInfo = function () {
   console.log(this.info);
 };
 
-// const ref = printInfo.call(nameInfo);
-
 Function.prototype.mybind = function (refObject, ...arg) {
   const callingMethod = this;
   return function (...innerarg) {
