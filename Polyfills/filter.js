@@ -1,21 +1,17 @@
-// custom filter
-Array.prototype.myFilter = function (cbFun) {
-  let res = [];
-  for (let item of this) {
-    if (cbFun(item)) {
-      res.push(item);
+const arr = [1, 2, 3, 4, 5];
+const res = arr.filter((item) => item > 2);
+console.log("filtered response", res);
+
+Array.prototype.myFilter = function (cbFunction) {
+  const arr = this;
+  const res = [];
+  for (let index = 0; index < arr.length; index++) {
+    if (cbFunction(arr[index])) {
+      res.push(arr[index]);
     }
   }
   return res;
 };
-const arr = [1, 2, 3, 4, 5];
-const res = arr.myFilter((item) => {
-  return item > 1;
-});
-console.log(
-  arr.filter((item) => {
-    return item > 2;
-  })
-);
 
-console.log(res);
+const myRes = arr.myFilter((item, index, arr) => item > 4);
+console.log("custom filter response", myRes);
