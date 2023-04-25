@@ -1,3 +1,17 @@
 h1, h2 {
   font-family: Lato;
 }
+
+.flex-container {
+  display: flex;
+  /* Set display to flex to create a flex container */
+}
+
+.flex-item {
+  flex: 1;
+  /* Set flex property to 1 to allow items to grow and fill available space equally */
+  padding: 1rem;
+  /* Add padding for spacing */
+  border: 1px solid #000;
+  /* Add border for visual separation */
+}
