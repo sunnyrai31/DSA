@@ -57,7 +57,8 @@ printInfo.customApplyViaCall(info, ["Apply implementation", "via call way"]);
 
 Function.prototype.customApplyViaBind = function (refObject, ...arg) {
   const fn = this;
-  this.bind(refObject, ...arg)();
+  this.bind(refObject, ...arg)(); // this is not required , should be returning this this.bind(refObject, ...arg) and calling should be done by caller.
 };
 
 printInfo.customApplyViaBind(info, ["Apply implementation", "via bind way"]);
+ 

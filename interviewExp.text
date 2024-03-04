@@ -1,0 +1,46 @@
+[Akamai] 
+[first round]
+intro
+brif about the project, work and skill set
+why u are rewritting everything
+if that case occured how to reduce minimize the effect
+
+how to communication happend in angular , varios way - input , output, observable , service
+what is DI in angular 
+what are the life cycle hook angular have brif
+if in your project angular js and angular both are avialable how u are notify componenent of them regarding the change happend.
+(via service) 
+then write a Emitter class - 
+which have .emit, .subscribe, release method.  [was not able to solve this] 
+
+
+[tekion]
+*****************
+[first row ]-----
+into 
+brif about the project and experience and tech
+closure 
+event loop array , map , reduce 
+angular vs react 
+virtual dom
+
+
+
+[VmWare]
+Create an event emitter that goes like this
+ emitter = new Emitter();
+ *
+ Allows you to subscribe to some event
+ sub1 = emitter.subscribe('function_name', callback1);
+ (you can have multiple callbacks to the same event)
+ sub2 = emitter.subscribe('function_name', callback2);
+ *
+ You can emit the event you want with this api
+ (you can receive 'n' number of arguments)
+ emitter.emit('function_name', foo, bar);
+ *
+ And allows you to release the subscription like this
+ (but you should be able to still emit from sub2)
+ sub1.release();
+
+ 
